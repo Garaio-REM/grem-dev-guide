@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+main() {
+    find . -name '*.drawio' -print0 | \
+        xargs -0 -n 1 drawio --export --format png
+}
+
+main "$@"
